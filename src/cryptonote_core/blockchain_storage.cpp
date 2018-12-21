@@ -1422,7 +1422,7 @@ uint64_t blockchain_storage::get_adjusted_time()
 //------------------------------------------------------------------
 bool blockchain_storage::check_block_timestamp_main(const block& b)
 {
-  if(b.timestamp > get_adjusted_time() + CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT_V4)
+  if(b.timestamp > get_adjusted_time() + 720)
   {
     LOG_PRINT_L0("Timestamp of block with id: " << get_block_hash(b) << ", " << b.timestamp << ", bigger than adjusted time + 2 hours");
     return false;
